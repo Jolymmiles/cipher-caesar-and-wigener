@@ -1,5 +1,5 @@
 import Cipher.CaesarCipher;
-import Cipher.ChiffredeVigenere;
+import Cipher.Vigenener;
 
 public class Aplication {
     public static void main(String[] args){
@@ -13,8 +13,12 @@ public class Aplication {
         System.out.println(testCharFour + ": " + (int) testCharFour);
         System.out.println(CaesarCipher.makeCipher("A", 2));
         System.out.println(CaesarCipher.deleteCipher("C", 2));
+        String key = "ру";
+        Vigenener v = new Vigenener(1072, 33);
+        String enc = v.encrypt("тест", key);
+        System.out.println(enc);
+        String dec = v.decrypt(enc, key);
+        System.out.println(dec);
 
-        System.out.println(ChiffredeVigenere.makeCipher("dog", "lemon"));
-        System.out.println(ChiffredeVigenere.deleteCipher("dog", "lemon"));
     }
 }
